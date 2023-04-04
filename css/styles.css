@@ -1,0 +1,32 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    flex-grow: 1;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+section>div {
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+section>div>div {
+    display: flex;
+    flex-grow: 1;
+    border: 1px solid black;
+}
+
+section>div>div>div {
+    border: 1px solid black;
+    flex-grow: 1;
+}
