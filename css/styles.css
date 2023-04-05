@@ -12,21 +12,21 @@ section {
     background-color: rgb(226, 226, 226);
     padding: 50px;
 }
-/* sketch area */
-section>div {
+
+.sketch-area {
     display: flex;
     flex-direction: column;
     height: 50%;
     padding: 10px;
     background-color: rgb(255, 255, 255);
 }
-/* grid rows */
-section>div>div {
+
+.grid-row {
     flex-grow: 1;
     display: flex;
 }
-/* grid cells */
-section>div>div>div {
+
+.grid-cell {
     flex-grow: 1;
     border: 1px solid black;
 }
