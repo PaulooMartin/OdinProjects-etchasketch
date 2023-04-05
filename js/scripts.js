@@ -35,13 +35,18 @@ function createGrid(rows, columns){
 
 function clickAddBgColor (cell) {
     cell.addEventListener('click', () => {
-        cell.style.backgroundColor = 'red';
+        cell.style.backgroundColor = randomRGB();
     })
     return;
 }
 
 function hoverAddBgColor (cell) {
     cell.addEventListener('mouseover', () => {
-        cell.style.backgroundColor = 'blue';
+        cell.style.backgroundColor = randomRGB();
     })
+}
+
+function randomRGB () {
+    let rgbValue = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+    return rgbValue;
 }
