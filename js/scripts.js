@@ -34,19 +34,33 @@ function createGrid(rows, columns){
 }
 
 function clickAddBgColor (cell) {
-    cell.addEventListener('click', () => {
-        cell.style.backgroundColor = randomRGB();
-    })
+    cell.addEventListener('click', cellSetBG);
     return;
 }
 
 function hoverAddBgColor (cell) {
-    cell.addEventListener('mouseover', () => {
-        cell.style.backgroundColor = randomRGB();
-    })
+    cell.addEventListener('mouseover', cellSetBG);
+    return;
+}
+
+function cellSetBG (){
+    this.style.backgroundColor = randomRGB();
+    return;
 }
 
 function randomRGB () {
     let rgbValue = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
     return rgbValue;
+}
+
+function switchToHover(){
+    gridCells.forEach(cell => cell.removeEventListener('click', cellSetBG))
+    gridCells.forEach(hoverAddBgColor);
+    return;
+}
+
+function switchToClick(){
+    gridCells.forEach(cell => cell.removeEventListener('mouseover', cellSetBG))
+    gridCells.forEach(clickAddBgColor);
+    return;
 }
