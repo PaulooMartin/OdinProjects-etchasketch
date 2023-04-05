@@ -10,7 +10,7 @@ let columns = 16;
 
 createGrid(rows,columns)
 gridRows.forEach(row => sketchArea.appendChild(row));
-gridCells.forEach(cell => cell.addEventListener('click', addBgColor));
+gridCells.forEach(clickAddBgColor);
 
 
 sketchArea.className = "sketch-area"
@@ -23,6 +23,7 @@ function createGrid(rows, columns){
     for (i = 0; i < rows; i++){
         gridRows[i] = document.createElement('div');
         gridRows[i].className = "grid-row";
+
         for (j = 0; j < columns; j++){
             gridCells[cellNum] = document.createElement('div');
             gridCells[cellNum].className = "grid-cell";
@@ -32,7 +33,9 @@ function createGrid(rows, columns){
     }
 }
 
-function addBgColor () {
-    this.style.backgroundColor = 'red';
+function clickAddBgColor (cell) {
+    cell.addEventListener('click', () => {
+        cell.style.backgroundColor = 'red';
+    })
     return;
 }
