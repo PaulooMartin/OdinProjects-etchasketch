@@ -9,10 +9,11 @@ let columns = 16;
 
 
 createGrid(rows,columns)
-gridRows.forEach(element => sketchArea.appendChild(element));
+gridRows.forEach(row => sketchArea.appendChild(row));
+gridCells.forEach(cell => cell.addEventListener('click', addBgColor));
+
 
 sketchArea.className = "sketch-area"
-
 gridSection.appendChild(sketchArea);
 htmlBody.appendChild(gridSection);
 
@@ -29,4 +30,9 @@ function createGrid(rows, columns){
             cellNum++;
         }
     }
+}
+
+function addBgColor () {
+    this.style.backgroundColor = 'red';
+    return;
 }
