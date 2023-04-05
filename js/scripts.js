@@ -39,3 +39,9 @@ function clickAddBgColor (cell) {
     })
     return;
 }
+
+function hoverAddBgColor (cell) {
+    cell.addEventListener('mouseover', () => {
+        cell.style.backgroundColor = 'blue';
+    })
+}
