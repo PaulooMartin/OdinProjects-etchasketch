@@ -9,6 +9,8 @@ section {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(226, 226, 226);
     padding: 50px;
 }
@@ -16,7 +18,8 @@ section {
 .sketch-area {
     display: flex;
     flex-direction: column;
-    height: 50%;
+    height: 600px;
+    width: 600px;
     padding: 10px;
     background-color: rgb(255, 255, 255);
 }
@@ -28,5 +31,5 @@ section {
 
 .grid-cell {
     flex-grow: 1;
-    border: 1px solid black;
+    border: 1px solid rgb(230, 228, 228);
 }

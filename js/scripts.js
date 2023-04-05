@@ -4,8 +4,8 @@ const sketchArea = document.createElement('div');
 
 let gridRows = [];
 let gridCells = [];
-let rows = 16;
-let columns = 16;
+let rows = 4;
+let columns = 4;
 
 
 createGrid(rows,columns)
