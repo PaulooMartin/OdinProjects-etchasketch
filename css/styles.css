@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 body {
     height: 100vh;
     display: flex;
@@ -5,14 +7,63 @@ body {
     margin: 0px;
 }
 
+button{
+    padding: 10px;
+    border-radius: 15px;
+    border: solid black 3px;
+    font-size: 24px;
+}
+
 .sketch-section {
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(226, 226, 226);
+    gap: 50px;
     padding: 50px;
+}
+
+.sketch-options{
+    display: flex;
+    height: 600px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.clear-btn{
+    background-color: transparent;
+}
+
+.color-palettes{
+    display: flex;
+    flex-wrap: wrap
+}
+
+.palette{
+    flex-basis: 100px;
+    height: 100px;
+    shape-outside: circle(100%);
+    clip-path: circle(30%);
+    background-color: transparent;
+    border: transparent;
+}
+.rainbow-mode{
+    background: linear-gradient(to right, rgb(255, 86, 86), rgb(255, 188, 65), rgb(255, 255, 71), rgb(57, 255, 57), rgb(72, 72, 255), rgb(178, 70, 255),rgb(255, 93, 255));
+}
+
+.hover-mode, .click-mode{
+    display: flex;
+    gap: 15px;
+}
+
+.hover-mode > p, .click-mode > p{
+    font-size: 18px;
+}
+
+.resize-grid{
+    color: white;
+    background-color: blueviolet;
+    border: none;
 }
 
 .sketch-area {
@@ -22,6 +73,7 @@ body {
     width: 600px;
     padding: 10px;
     background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(140, 72, 248);
 }
 
 .grid-row {
@@ -32,4 +84,8 @@ body {
 .grid-cell {
     flex-grow: 1;
     border: 1px solid rgb(230, 228, 228);
+}
+
+* {
+    font-family: 'Itim', cursive;
 }

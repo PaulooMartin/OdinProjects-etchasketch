@@ -1,13 +1,8 @@
 const htmlBody = document.querySelector('body');
 
-const sketchSection = document.createElement("section");
-sketchSection.className = "sketch-section"
+const sketchSection = document.querySelector(".sketch-section");
 
-const sketchArea = document.createElement('div');
-sketchArea.className = "sketch-area"
-
-const resizeBtn = document.createElement('button');
-resizeBtn.className = 'resize-button'
+const sketchArea = document.querySelector('.sketch-area');
 
 let gridRows = [];
 let gridCells = [];
@@ -16,7 +11,6 @@ let columns = 16;
 
 
 createGrid(rows,columns)
-htmlBody.appendChild(sketchSection);
 
 function createGrid(rows, columns){
     let cellNum = 0;
