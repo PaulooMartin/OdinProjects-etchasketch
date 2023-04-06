@@ -1,5 +1,5 @@
 const htmlBody = document.querySelector('body');
-const gridSection = document.createElement("section");
+const sketchSection = document.createElement("section");
 const sketchArea = document.createElement('div');
 
 let gridRows = [];
@@ -14,8 +14,10 @@ gridCells.forEach(clickAddBgColor);
 
 
 sketchArea.className = "sketch-area"
-gridSection.appendChild(sketchArea);
-htmlBody.appendChild(gridSection);
+sketchSection.appendChild(sketchArea);
+
+sketchSection.className = "sketch-section"
+htmlBody.appendChild(sketchSection);
 
 function createGrid(rows, columns){
     let cellNum = 0;
