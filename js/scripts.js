@@ -9,6 +9,9 @@ let gridCells = [];
 let rows = 16;
 let columns = 16;
 
+
+let currentColor = "green";
+let rainbowMode = false;
 let clickMode = true;
 let hoverMode = false;
 
@@ -47,7 +50,7 @@ function hoverAddBgColor (cell) {
 }
 
 function cellSetBG (){
-    this.style.backgroundColor = randomRGB();
+    rainbowMode === true ? this.style.backgroundColor = randomRGB() : this.style.backgroundColor = currentColor;
     return;
 }
 
