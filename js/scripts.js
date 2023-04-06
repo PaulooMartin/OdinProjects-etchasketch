@@ -11,16 +11,11 @@ resizeBtn.className = 'resize-button'
 
 let gridRows = [];
 let gridCells = [];
-let rows = 4;
-let columns = 4;
+let rows = 16;
+let columns = 16;
 
 
 createGrid(rows,columns)
-gridRows.forEach(row => sketchArea.appendChild(row));
-gridCells.forEach(clickAddBgColor);
-
-
-sketchSection.appendChild(sketchArea);
 htmlBody.appendChild(sketchSection);
 
 function createGrid(rows, columns){
@@ -37,6 +32,10 @@ function createGrid(rows, columns){
             cellNum++;
         }
     }
+
+    gridRows.forEach(row => sketchArea.appendChild(row));
+    gridCells.forEach(clickAddBgColor);
+    sketchSection.appendChild(sketchArea);
 }
 
 function clickAddBgColor (cell) {
@@ -71,7 +70,6 @@ function switchToClick(){
     return;
 }
 
-
 function resizeGrid(){
     do{
         rows = prompt('Number of rows: ');
@@ -93,9 +91,4 @@ function resizeGrid(){
     gridCells = [];
     gridRows = [];
     createGrid(rows, columns);
-
-    gridRows.forEach(row => sketchArea.appendChild(row));
-    gridCells.forEach(clickAddBgColor);
-
-    sketchSection.appendChild(sketchArea);
 }
