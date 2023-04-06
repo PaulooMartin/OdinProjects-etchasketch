@@ -9,6 +9,8 @@ let gridCells = [];
 let rows = 16;
 let columns = 16;
 
+let clickMode = true;
+let hoverMode = false;
 
 createGrid(rows,columns)
 
@@ -28,7 +30,9 @@ function createGrid(rows, columns){
     }
 
     gridRows.forEach(row => sketchArea.appendChild(row));
-    gridCells.forEach(clickAddBgColor);
+
+    hoverMode === true ? gridCells.forEach(hoverAddBgColor) : gridCells.forEach(clickAddBgColor);
+
     sketchSection.appendChild(sketchArea);
 }
 
