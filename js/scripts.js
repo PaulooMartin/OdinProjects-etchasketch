@@ -1,6 +1,13 @@
 const htmlBody = document.querySelector('body');
+
 const sketchSection = document.createElement("section");
+sketchSection.className = "sketch-section"
+
 const sketchArea = document.createElement('div');
+sketchArea.className = "sketch-area"
+
+const resizeBtn = document.createElement('button');
+resizeBtn.className = 'resize-button'
 
 let gridRows = [];
 let gridCells = [];
@@ -13,10 +20,7 @@ gridRows.forEach(row => sketchArea.appendChild(row));
 gridCells.forEach(clickAddBgColor);
 
 
-sketchArea.className = "sketch-area"
 sketchSection.appendChild(sketchArea);
-
-sketchSection.className = "sketch-section"
 htmlBody.appendChild(sketchSection);
 
 function createGrid(rows, columns){
@@ -65,4 +69,33 @@ function switchToClick(){
     gridCells.forEach(cell => cell.removeEventListener('mouseover', cellSetBG))
     gridCells.forEach(clickAddBgColor);
     return;
+}
+
+
+function resizeGrid(){
+    do{
+        rows = prompt('Number of rows: ');
+        if (rows == null) return;
+        rows = +rows;
+    } while (isNaN(rows) || rows > 100 || rows <= 0)
+
+    do{
+        columns = prompt('Number of columns: ');
+        if (columns == null) return;
+        columns = +columns;
+    } while (isNaN(columns) || columns > 100 || columns <= 0)
+
+    // Removes previous grid
+    while (sketchArea.firstChild) {
+        sketchArea.removeChild(sketchArea.firstChild);
+    }
+
+    gridCells = [];
+    gridRows = [];
+    createGrid(rows, columns);
+
+    gridRows.forEach(row => sketchArea.appendChild(row));
+    gridCells.forEach(clickAddBgColor);
+
+    sketchSection.appendChild(sketchArea);
 }
