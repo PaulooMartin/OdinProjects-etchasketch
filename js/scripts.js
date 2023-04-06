@@ -92,3 +92,7 @@ function resizeGrid(){
     gridRows = [];
     createGrid(rows, columns);
 }
+
+function clearGrid (){
+    gridCells.forEach(cell => cell.style.backgroundColor = "");
+}
