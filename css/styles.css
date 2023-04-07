@@ -78,13 +78,13 @@ button:active{
     width: 600px;
     padding: 10px;
     background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(140, 72, 248);
+    border: 5px solid #4287f5;
 }
 
 .active-rainbow{
-    border: 5px transparent solid;
-    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-    border-image-slice: 1;
+    border: 5px transparent solid !important;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%) !important;
+    border-image-slice: 1 !important;
 }
 
 .grid-row {

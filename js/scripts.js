@@ -3,6 +3,8 @@ const sketchSection = document.querySelector(".sketch-section");
 const sketchArea = document.querySelector('.sketch-area');
 const clearBtn = document.querySelector('.clear-btn');
 const rainbowBtn = document.querySelector('.rainbow-mode');
+const hoverText = document.querySelector('.hover-mode');
+const clickText = document.querySelector('.click-mode');
 const resizeBtn = document.querySelector('.resize-grid');
 const palettes = document.querySelectorAll('.palette');
 
@@ -20,7 +22,10 @@ let hoverMode = false;
 createGrid(rows,columns);
 colorPicker()
 clearBtn.addEventListener('click', clearGrid);
-rainbowBtn.addEventListener('click', () => rainbowMode === false ? rainbowMode = true : rainbowMode = false);
+rainbowBtn.addEventListener('click', () => {
+    rainbowMode === false ? rainbowMode = true : rainbowMode = false;
+    sketchArea.classList.toggle("active-rainbow")
+});
 resizeBtn.addEventListener('click', resizeGrid);
 switchModeKeyShortcut();
 
@@ -67,12 +72,16 @@ function randomRGB () {
 }
 
 function switchToHover(){
+    hoverText.classList.add('active-mode');
+    clickText.classList.remove('active-mode')
     gridCells.forEach(cell => cell.removeEventListener('click', cellSetBG))
     gridCells.forEach(hoverAddBgColor);
     return;
 }
 
 function switchToClick(){
+    clickText.classList.add('active-mode');
+    hoverText.classList.remove('active-mode')
     gridCells.forEach(cell => cell.removeEventListener('mouseover', cellSetBG))
     gridCells.forEach(clickAddBgColor);
     return;
@@ -106,9 +115,15 @@ function clearGrid (){
 }
 
 function colorPicker(){
-    palettes.forEach(picker => picker.addEventListener('click', () => currentColor = picker.value))
+    palettes.forEach(picker => picker.addEventListener('click', () => {
+        currentColor = picker.value;
+        sketchArea.style.border = `5px solid ${picker.value}`;
+    }))
 
-    palettes.forEach(picker => picker.addEventListener('change', () => currentColor = picker.value))
+    palettes.forEach(picker => picker.addEventListener('change', () => {
+        currentColor = picker.value;
+        sketchArea.style.border = `5px solid ${picker.value}`;
+    }))
 }
 
 function switchModeKeyShortcut(){
