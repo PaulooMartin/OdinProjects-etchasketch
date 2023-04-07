@@ -4,18 +4,21 @@ const sketchSection = document.querySelector(".sketch-section");
 
 const sketchArea = document.querySelector('.sketch-area');
 
+const palettes = document.querySelectorAll('.palette');
+
 let gridRows = [];
 let gridCells = [];
 let rows = 16;
 let columns = 16;
 
 
-let currentColor = "green";
+let currentColor = palettes[0].value;
 let rainbowMode = false;
 let clickMode = true;
 let hoverMode = false;
 
-createGrid(rows,columns)
+createGrid(rows,columns);
+colorPicker()
 
 function createGrid(rows, columns){
     let cellNum = 0;
@@ -96,4 +99,10 @@ function resizeGrid(){
 
 function clearGrid (){
     gridCells.forEach(cell => cell.style.backgroundColor = "");
+}
+
+function colorPicker(){
+    palettes.forEach(picker => picker.addEventListener('click', () => currentColor = picker.value))
+
+    palettes.forEach(picker => picker.addEventListener('change', () => currentColor = picker.value))
 }
