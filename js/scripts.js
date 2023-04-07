@@ -22,6 +22,7 @@ colorPicker()
 clearBtn.addEventListener('click', clearGrid);
 rainbowBtn.addEventListener('click', () => rainbowMode === false ? rainbowMode = true : rainbowMode = false);
 resizeBtn.addEventListener('click', resizeGrid);
+switchModeKeyShortcut();
 
 function createGrid(rows, columns){
     let cellNum = 0;
@@ -108,4 +109,18 @@ function colorPicker(){
     palettes.forEach(picker => picker.addEventListener('click', () => currentColor = picker.value))
 
     palettes.forEach(picker => picker.addEventListener('change', () => currentColor = picker.value))
+}
+
+function switchModeKeyShortcut(){
+    window.addEventListener('keyup', (e) => {
+    if (e.key === 'g'){
+        hoverMode = false;
+        clickMode = true;
+        switchToClick();
+    } else if (e.key === 'h'){
+        clickMode = false;
+        hoverMode = true
+        switchToHover();
+    }
+})
 }
