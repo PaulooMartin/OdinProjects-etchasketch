@@ -1,9 +1,9 @@
 const htmlBody = document.querySelector('body');
-
 const sketchSection = document.querySelector(".sketch-section");
-
 const sketchArea = document.querySelector('.sketch-area');
-
+const clearBtn = document.querySelector('.clear-btn');
+const rainbowBtn = document.querySelector('.rainbow-mode');
+const resizeBtn = document.querySelector('.resize-grid');
 const palettes = document.querySelectorAll('.palette');
 
 let gridRows = [];
@@ -19,6 +19,9 @@ let hoverMode = false;
 
 createGrid(rows,columns);
 colorPicker()
+clearBtn.addEventListener('click', clearGrid);
+rainbowBtn.addEventListener('click', () => rainbowMode === false ? rainbowMode = true : rainbowMode = false);
+resizeBtn.addEventListener('click', resizeGrid);
 
 function createGrid(rows, columns){
     let cellNum = 0;
