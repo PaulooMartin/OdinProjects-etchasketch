@@ -3,8 +3,8 @@ const sketchSection = document.querySelector(".sketch-section");
 const sketchArea = document.querySelector('.sketch-area');
 const clearBtn = document.querySelector('.clear-btn');
 const rainbowBtn = document.querySelector('.rainbow-mode');
-const hoverText = document.querySelector('.hover-mode');
-const clickText = document.querySelector('.click-mode');
+const hoverModeIndicator = document.querySelector('.hover-mode');
+const clickModeIndicator = document.querySelector('.click-mode');
 const resizeBtn = document.querySelector('.resize-grid');
 const palettes = document.querySelectorAll('.palette');
 
@@ -27,7 +27,7 @@ rainbowBtn.addEventListener('click', () => {
     sketchArea.classList.toggle("active-rainbow")
 });
 resizeBtn.addEventListener('click', resizeGrid);
-switchModeKeyShortcut();
+switchModeShortcutKey();
 
 function createGrid(rows, columns){
     let cellNum = 0;
@@ -67,21 +67,22 @@ function cellSetBG (){
 }
 
 function randomRGB () {
-    let rgbValue = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+    let random255 = () => Math.floor(Math.random() * 255)
+    let rgbValue = `rgb(${random255()}, ${random255()}, ${random255()})`
     return rgbValue;
 }
 
 function switchToHover(){
-    hoverText.classList.add('active-mode');
-    clickText.classList.remove('active-mode')
+    hoverModeIndicator.classList.add('active-mode');
+    clickModeIndicator.classList.remove('active-mode')
     gridCells.forEach(cell => cell.removeEventListener('click', cellSetBG))
     gridCells.forEach(hoverAddBgColor);
     return;
 }
 
 function switchToClick(){
-    clickText.classList.add('active-mode');
-    hoverText.classList.remove('active-mode')
+    clickModeIndicator.classList.add('active-mode');
+    hoverModeIndicator.classList.remove('active-mode')
     gridCells.forEach(cell => cell.removeEventListener('mouseover', cellSetBG))
     gridCells.forEach(clickAddBgColor);
     return;
@@ -126,7 +127,7 @@ function colorPicker(){
     }))
 }
 
-function switchModeKeyShortcut(){
+function switchModeShortcutKey(){
     window.addEventListener('keyup', (e) => {
     if (e.key === 'g'){
         hoverMode = false;
