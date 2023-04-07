@@ -61,9 +61,6 @@ button:active{
     text-align: center;
 }
 
-.active-mode{
-    color: rgb(155, 70, 0);
-}
 
 .resize-grid{
     color: white;
@@ -81,12 +78,6 @@ button:active{
     border: 5px solid #4287f5;
 }
 
-.active-rainbow{
-    border: 5px transparent solid !important;
-    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%) !important;
-    border-image-slice: 1 !important;
-}
-
 .grid-row {
     flex-grow: 1;
     display: flex;
@@ -95,6 +86,16 @@ button:active{
 .grid-cell {
     flex-grow: 1;
     border: 1px solid rgb(230, 228, 228);
+}
+
+.active-mode {
+    color: rgb(155, 70, 0);
+}
+
+.active-rainbow {
+    border: 5px transparent solid !important;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%) !important;
+    border-image-slice: 1 !important;
 }
 
 * {
