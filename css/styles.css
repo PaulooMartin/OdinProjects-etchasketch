@@ -14,6 +14,10 @@ button{
     font-size: 24px;
 }
 
+button:active{
+    scale: 1.1;
+}
+
 .sketch-section {
     flex-grow: 1;
     display: flex;
@@ -52,12 +56,13 @@ button{
 }
 
 .hover-mode, .click-mode{
-    display: flex;
-    gap: 15px;
+    font-size: 24px;
+    margin: 0px;
+    text-align: center;
 }
 
-.hover-mode > p, .click-mode > p{
-    font-size: 18px;
+.active-mode{
+    color: rgb(155, 70, 0);
 }
 
 .resize-grid{
@@ -74,6 +79,12 @@ button{
     padding: 10px;
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(140, 72, 248);
+}
+
+.active-rainbow{
+    border: 5px transparent solid;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
 }
 
 .grid-row {
