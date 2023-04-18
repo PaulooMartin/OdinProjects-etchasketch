@@ -1,4 +1,4 @@
-# OdinProjects-etchasketch
+# OdinProjects-EtchASketch
 
 Hey guys! This is my repository for the [Etch-A-Sketch project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)
 
